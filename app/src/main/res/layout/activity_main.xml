@@ -1,19 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    <!-- Bạn có thể dùng ConstraintLayout hoặc LinearLayout.
+         Để code đơn giản và thẳng hàng như ảnh, LinearLayout dọc chứa các LinearLayout ngang là dễ nhất -->
 
-    <Button
-        android:id="@+id/btn_create_article"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="16dp"
-        android:text="Tạo Bài Mới" />
-</RelativeLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="10dp">
+        <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="ID" android:textStyle="bold" android:textSize="16sp"/>
+        <EditText android:id="@+id/edt_id" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="#C0C0C0" android:padding="10dp"/>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="10dp">
+        <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="Name" android:textStyle="bold" android:textSize="16sp"/>
+        <EditText android:id="@+id/edt_name" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="#C0C0C0" android:padding="10dp"/>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="10dp">
+        <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="Email" android:textStyle="bold" android:textSize="16sp"/>
+        <EditText android:id="@+id/edt_email" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="#C0C0C0" android:padding="10dp"/>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="20dp">
+        <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="Tel" android:textStyle="bold" android:textSize="16sp"/>
+        <EditText android:id="@+id/edt_tel" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="#C0C0C0" android:padding="10dp"/>
+    </LinearLayout>
+
+    <!-- Nút cho SharedPreferences -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center" android:layout_marginBottom="10dp">
+        <TextView android:layout_width="150dp" android:layout_height="wrap_content" android:text="SharedPreference" android:textStyle="bold" android:textSize="16sp"/>
+        <Button android:id="@+id/btn_sp_save" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Save" android:layout_marginEnd="10dp" android:backgroundTint="#A9A9A9" android:textColor="@android:color/black"/>
+        <Button android:id="@+id/btn_sp_load" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Load" android:backgroundTint="#A9A9A9" android:textColor="@android:color/black"/>
+    </LinearLayout>
+
+    <!-- Nút cho SQLite -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center">
+        <TextView android:layout_width="150dp" android:layout_height="wrap_content" android:text="SQLite" android:textStyle="bold" android:textSize="16sp"/>
+        <Button android:id="@+id/btn_sql_save" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Save" android:layout_marginEnd="10dp" android:backgroundTint="#A9A9A9" android:textColor="@android:color/black"/>
+        <Button android:id="@+id/btn_sql_load" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Load" android:backgroundTint="#A9A9A9" android:textColor="@android:color/black"/>
+    </LinearLayout>
+</LinearLayout>
